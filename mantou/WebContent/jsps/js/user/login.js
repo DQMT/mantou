@@ -1,0 +1,6 @@
+
+
+function inputfocus(){
+	$(".error").text("");
+}
+

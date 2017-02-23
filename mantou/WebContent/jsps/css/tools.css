@@ -1,0 +1,53 @@
+#options {
+	position: fixed;
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 100px;
+	height: 100px;
+	z-index: 9;
+	background-color: #acacd7;
+	display: none;
+}
+
+#options ul li a {
+	background-color: #ffff80;
+}
+
+#options ul li a:hover {
+	background-color: #ff8040;
+}
+
+#m_tool {
+	position: fixed;
+	bottom: 200px;
+	right: 20px;
+}
+
+#m_tool .m_tool_btn {
+	display: block;
+	background: #b00;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 5px;
+	opacity: 0.5;
+	cursor: pointer;
+	
+}
+#m_tool .icon_up{
+	background: url(../../images/up.jpg) center left no-repeat;
+}
+#m_tool .icon_down{
+	background: url(../../images/down.jpg) center left no-repeat;
+}
+#m_tool .icon_refresh{
+	background: url(../../images/refresh.jpg) center  no-repeat;
+}
+
+#m_tool .m_tool_btn:hover {
+	opacity: 0.9;
+}
+
