@@ -31,7 +31,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<!-- <property name="url" value="jdbc:mysql://45.78.35.107:3306/mantou"> -->
-		<property name="url" value="jdbc:mysql://127.0.0.1:3306/mantou">
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/mantou?useUnicode=true&amp;characterEncoding=utf-8 ">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="Dtl3mT1QuJSCe9Ay"></property>
@@ -50,7 +50,19 @@
             <list>  
                 <value>io.uicp.tincat.mantou</value>  
             </list>  
-        </property>  
+        </property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5InnoDBDialect
+				</prop>
+				<prop key="hibernate.show_sql">
+					true
+				</prop>
+			</props>
+		</property>
+    
     </bean>  
   
     <!-- 配置事务管理器 -->  
@@ -78,6 +90,7 @@
             <tx:method name="regist*" propagation="REQUIRED" />  
             <tx:method name="validateRegist*" propagation="REQUIRED" />  
          	<tx:method name="get*" propagation="REQUIRED"  read-only="true"/>  
+         	<tx:method name="search*" propagation="REQUIRED"  read-only="true"/> 
             <tx:method name="find*" propagation="REQUIRED" read-only="true" />  
             <tx:method name="load*" propagation="REQUIRED" read-only="true" />  
             <tx:method name="*" propagation="REQUIRED"  read-only="true" />  

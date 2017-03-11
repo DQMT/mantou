@@ -151,5 +151,25 @@ public class PageServiceImpl implements PageService {
 		page.setThreadsList(threadsList);
 		return page;
 	}
+	
+	@Override
+	@Transactional
+	public Page search(String content,Page page) {
+		Properties props = new Properties();
+		try {
+			// props.load(this.getClass().getClassLoader().getResourceAsStream("mantou.properties"));
+			// 会导致utf-8中文乱码
+			props.load(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("mantou.properties"),
+					"UTF-8"));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		int pageSize = Integer.parseInt(props.getProperty("pagesize"));
+		page.setPageSize(pageSize);
+		page.setTotalRecords(pageDao.getSearchCount(content));
+		List<Threads> threadsList = pageDao.search(content,page.getPageCode(),pageSize);
+		page.setThreadsList(threadsList);
+		return page;
+	}
 
 }

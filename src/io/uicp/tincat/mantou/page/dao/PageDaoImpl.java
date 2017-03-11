@@ -6,12 +6,16 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import io.uicp.tincat.mantou.basedao.BaseDao;
 import io.uicp.tincat.mantou.subm.entity.Subm;
 import io.uicp.tincat.mantou.threads.entity.Threads;
 import io.uicp.tincat.mantou.user.entity.User;
+import io.uicp.tincat.mantou.util.HibernateUtil;
 
 @Repository("pageDao")
 @SuppressWarnings("all")
@@ -179,6 +183,20 @@ public class PageDaoImpl implements PageDao {
 	@Override
 	public List<Threads> getHistory(User user, int pageCode, int pageSize) {
 		return threadsFilter(baseDaoT.find("from Threads where uid = ? order by createTime desc", new Object[] { user.getUid() }, pageCode, pageSize));
+	}
+
+	@Override
+	public int getSearchCount(String content) {
+		Map param = new HashMap();
+		param.put("content", content);
+		return baseDaoT.countLike("select count(*) from Threads where text like :content", param).intValue();
+	}
+
+	@Override
+	public List<Threads> search(String content, int pageCode, int pageSize) {
+		Map param = new HashMap();
+		param.put("content", content);
+		return threadsFilter(baseDaoT.findLike("from Threads where text like  :content order by createTime desc", param, pageCode, pageSize));
 	}
 
 }

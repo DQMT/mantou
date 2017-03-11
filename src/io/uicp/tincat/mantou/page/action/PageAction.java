@@ -21,6 +21,7 @@ import io.uicp.tincat.mantou.page.service.PageService;
 import io.uicp.tincat.mantou.user.entity.User;
 import io.uicp.tincat.mantou.util.Const;
 import io.uicp.tincat.mantou.util.HibernateUtil;
+import io.uicp.tincat.mantou.util.StringUtil;
 
 @Controller
 public class PageAction extends ActionSupport implements ServletRequestAware {
@@ -113,12 +114,34 @@ public class PageAction extends ActionSupport implements ServletRequestAware {
 		int pageCode = Integer.parseInt(pageCodeS);
 		String url = request.getRequestURI();
 		System.out.println(url);
-
-		Page page = new Page();
-		page.setUrl(url);
-		page.setPageCode(pageCode);
 		User currentUser = (User) session.getAttribute("currentUser");
+		
+		Page page = new Page();
+		page.setUrl(StringUtil.getActionUrl(url)+"?user="+currentUser.getUserName());
+		page.setPageCode(pageCode);
+		
 		Page currentPage = pageService.history(currentUser, page);
+		session.setAttribute("currentPage", currentPage);
+		return "history";
+
+	}
+	
+	public String search() {
+		HttpSession session = request.getSession();
+		String pageCodeS = request.getParameter("pageCode");
+		String content = request.getParameter("content");
+		if (pageCodeS == null) {
+			pageCodeS = "1";
+		}
+		int pageCode = Integer.parseInt(pageCodeS);
+		String url = request.getRequestURI();
+		System.out.println(url);
+		
+		Page page = new Page();
+		page.setUrl(StringUtil.getActionUrl(url)+"?content="+content);
+		page.setPageCode(pageCode);
+		
+		Page currentPage = pageService.search(content, page);
 		session.setAttribute("currentPage", currentPage);
 		return "history";
 

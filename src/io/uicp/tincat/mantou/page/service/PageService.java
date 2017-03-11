@@ -13,5 +13,6 @@ public interface PageService {
 	public Page reply(Page page);
 	public Map<Integer,String> getValidSubmsMenu();
 	public Page history(User user,Page page);
+	public Page search(String content,Page page);
 	public String ajaxThreadsReference(String tid);
 }

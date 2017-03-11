@@ -23,4 +23,19 @@ public class StringUtil {
     public static String getMD5(String s){
     	return DigestUtils.md5Hex(s);
     }
+    
+    public static String getActionUrl(String url){
+    	int i = url.indexOf("action");
+    	if(i>-1){
+    		return url.substring(0,i+6);
+    	}else{
+    		return url;
+    	}
+    	
+    }
+    
+    public static void main(String[] args) {
+		String s = "/mantou/page_history.action?user=jojo&pageCode=2";
+		System.out.println(getActionUrl(s));
+	}
 }

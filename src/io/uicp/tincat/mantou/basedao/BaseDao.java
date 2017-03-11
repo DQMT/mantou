@@ -2,6 +2,7 @@ package io.uicp.tincat.mantou.basedao;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 基础数据库操作类
@@ -71,6 +72,16 @@ public interface BaseDao<T> {
 	 */
 
 	public List<T> find(String hql, Object[] param);
+	
+	/**
+	 * 查询集合 模糊查询
+	 * 
+	 * @param hql
+	 * @param param
+	 * @return
+	 */
+
+	public List<T> findLike(String hql, Map<String,String> param);
 
 	/**
 	 * 查询集合
@@ -105,6 +116,17 @@ public interface BaseDao<T> {
 	 * @return
 	 */
 	public List<T> find(String hql, List<Object> param, Integer page, Integer rows);
+	
+	/**
+	 * 查询集合(带分页) 模糊查询
+	 * 
+	 * @param hql
+	 * @param param
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
+	public List<T> findLike(String hql, Map<String,String> param, Integer page, Integer rows);
 
 	/**
 	 * 获得一个对象
@@ -151,7 +173,17 @@ public interface BaseDao<T> {
 	 * @return
 	 */
 	public Long count(String hql, Object[] param);
+	
 
+	/**
+	 * select count(*) from 类 模糊查询
+	 * 
+	 * @param hql
+	 * @param param
+	 * @return
+	 */
+	public Long countLike(String hql, Map<String,String> param);
+	
 	/**
 	 * select count(*) from 类
 	 * 

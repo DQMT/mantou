@@ -45,4 +45,8 @@ public interface PageDao {
 	public List<Threads> getHistory(User user);
 	
 	public List<Threads> getHistory(User user,int pageCode,int pageSize);
+	
+	public int getSearchCount(String content);
+	
+	public List<Threads> search(String content,int pageCode,int pageSize);
 }

@@ -2,6 +2,7 @@ package io.uicp.tincat.mantou.basedao;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -137,10 +138,6 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 		}
 	}
 
-	public Long count(String hql) {
-		return (Long) this.getCurrentSession().createQuery(hql).uniqueResult();
-	}
-
 	public Long count(String hql, Object[] param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.length > 0) {
@@ -183,6 +180,49 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 			}
 		}
 		return q.executeUpdate();
+	}
+
+	@Override
+	public Long count(String hql) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long countLike(String hql, Map<String,String> param) {
+		Query q = this.getCurrentSession().createQuery(hql);
+		for(String key : param.keySet()){
+			q.setString(key, "%"+param.get(key)+"%");  
+		}
+		return (Long) q.uniqueResult();
+	}
+
+	@Override
+	public List<T> findLike(String hql, Map<String, String> param) {
+		Query q = this.getCurrentSession().createQuery(hql);
+		for(String key : param.keySet()){
+			q.setString(key, "%"+param.get(key)+"%");  
+			System.out.println(key+" = "+param.get(key));
+		}
+		return (List<T>) q.list();
+	}
+
+	@Override
+	public List<T> findLike(String hql, Map<String,String> param, Integer page, Integer rows) {
+		if (page == null || page < 1) {
+			page = 1;
+		}
+		if (rows == null || rows < 1) {
+			rows = 10;
+		}
+		Query q = this.getCurrentSession().createQuery(hql);
+		
+		for(String key : param.keySet()){
+			q.setString(key, "%"+param.get(key)+"%"); 
+			
+		}
+		
+		return q.setFirstResult((page - 1) * rows).setMaxResults(rows).list();
 	}
 
 }
