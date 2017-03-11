@@ -2,6 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+
 <div class="navbar  navbar-inverse  navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -51,7 +56,7 @@
 					</ul>
 				</li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"> 选项 <b class="caret"></b>
+					data-toggle="dropdown"> 更多 <b class="caret"></b>
 				</a>
 					<ul class="dropdown-menu">
 						<li class="divider"></li>
