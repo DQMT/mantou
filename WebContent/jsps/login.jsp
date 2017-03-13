@@ -11,7 +11,17 @@
 <!-- <link href="jsps/css/main.css" type="text/css" rel="stylesheet" /> -->
 <link href="/mantou/jsps/css/style.css?v=1" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="/mantou/jquery/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="/mantou/jsps/js/user/md5.js"></script>
 <script type="text/javascript" src="/mantou/jsps/js/user/login.js"></script>
+
+<script>
+
+function md5(){
+    var hash=hex_md5(document.getElementById("passWord").value);
+    document.getElementById("passWord").value=hash;
+}    
+
+</script>
 </head>
 <body>
 
@@ -40,8 +50,8 @@
 						<div>
 							<label>密码:</label> <input type="password" name="user.passWord"
 								class="inputClass" id="passWord"
-								onfocus="javascript:inputfocus();"
-								value="${currentUser.passWord }" /> <span class="error"
+								onfocus="javascript:inputfocus();" 
+								value="" /> <span class="error"
 								id="passWordError">${error }</span>
 						</div>
 
@@ -56,7 +66,7 @@
 							<!-- <input type="submit"  value="匿名登录!" /> -->
 						</div>
 						
-						<input type="submit"  value="登录账号" />
+						<input type="submit" onclick="return md5();" value="登录账号" />
 						<a href="/mantou/jsps/user/regist.jsp" rel="login"
 							class="linkform">还没有账号？点击这里注册</a>
 						<div class="clear"></div>

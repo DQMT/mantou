@@ -38,6 +38,8 @@ function validateRegistForm() {
 		bool = false;
 
 	}
+	var hash = hex_md5(document.getElementById("passWord").value);
+	document.getElementById("passWord").value = hash;
 	return bool;
 }
 

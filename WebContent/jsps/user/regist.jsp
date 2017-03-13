@@ -15,7 +15,9 @@
 <link href="/mantou/jsps/css/style.css" type="text/css" rel="stylesheet" />
 
 <script type="text/javascript" src="/mantou/jquery/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="/mantou/jsps/js/user/md5.js"></script>
 <script type="text/javascript" src="/mantou/jsps/js/user/regist.js"></script>
+
 
 </head>
 

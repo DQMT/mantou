@@ -20,20 +20,18 @@ public class ReportDaoImpl implements ReportDao{
 	
 	@Override
 	public int getTotalRecords() {
-		
-		return baseDao.count("select count(*) from Report order by updateTime desc").intValue();
+		return baseDao.count("select count(*) from Report ").intValue();
 	}
 
 	@Override
 	public List<Report> getAllReports() {
 		
-		return baseDao.find("from Report order by updateTime desc");
+		return baseDao.find("from Report order by rid desc");
 	}
 
 	@Override
 	public List<Report> getPageReports(int pageCode,int pageSize) {
-		
-		return baseDao.find("from Report order by updateTime desc",pageCode, pageSize);
+		return baseDao.find("from Report order by rid desc",pageCode, pageSize);
 	}
 
 	@Override

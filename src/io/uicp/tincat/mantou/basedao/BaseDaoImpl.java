@@ -184,8 +184,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Override
 	public Long count(String hql) {
-		// TODO Auto-generated method stub
-		return null;
+		return (Long) this.getCurrentSession().createQuery(hql).uniqueResult();
 	}
 
 	@Override
