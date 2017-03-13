@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50621
+Source Server Version : 50635
 Source Host           : localhost:3306
 Source Database       : mantou
 
 Target Server Type    : MYSQL
-Target Server Version : 50621
+Target Server Version : 50635
 File Encoding         : 65001
 
-Date: 2016-09-30 06:35:39
+Date: 2017-03-13 17:03:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,8 +29,9 @@ CREATE TABLE `t_reports` (
   `reason` varchar(128) DEFAULT NULL,
   `result` varchar(128) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`rid`),
+  KEY `rid` (`rid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_reports
@@ -44,6 +45,14 @@ INSERT INTO `t_reports` VALUES ('20', '833', '41', '41', '2016-07-31 12:53:04', 
 INSERT INTO `t_reports` VALUES ('21', '840', '45', '41', '2016-08-03 12:02:48', '2016-08-03 12:02:57', '', '已删除回复', '2');
 INSERT INTO `t_reports` VALUES ('22', '846', '41', '41', '2016-08-16 11:55:04', '2016-08-16 11:55:20', '', '已删除回复', '2');
 INSERT INTO `t_reports` VALUES ('23', '894', '41', '41', '2016-08-24 12:53:53', '2016-08-24 12:53:53', 'asdasdasd', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('24', '868', '48', '45', '2017-03-13 14:39:27', '2017-03-13 14:39:27', '', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('25', '906', '48', '41', '2017-03-13 16:06:13', '2017-03-13 16:06:13', '啊啊啊', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('26', '907', '48', '52', '2017-03-13 16:43:25', '2017-03-13 16:43:25', '22', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('27', '868', '48', '45', '2017-03-13 16:43:46', '2017-03-13 16:43:46', '3', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('28', '868', '48', '45', '2017-03-13 16:43:53', '2017-03-13 16:43:53', '3', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('29', '868', '48', '45', '2017-03-13 16:44:15', '2017-03-13 16:44:15', '2', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('30', '907', '48', '52', '2017-03-13 16:57:29', '2017-03-13 16:57:29', '', '尚未处理', '1');
+INSERT INTO `t_reports` VALUES ('31', '907', '48', '52', '2017-03-13 16:57:41', '2017-03-13 16:57:41', 'py', '尚未处理', '1');
 
 -- ----------------------------
 -- Table structure for t_sub_m
@@ -87,7 +96,7 @@ CREATE TABLE `t_threads` (
   PRIMARY KEY (`tid`),
   KEY `uid` (`uid`),
   CONSTRAINT `t_threads_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `t_user` (`uid`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=897 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=909 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_threads
@@ -200,7 +209,18 @@ INSERT INTO `t_threads` VALUES ('892', '', '', '41', 'N4KX6LnjfxxCdrdE', '2', '2
 INSERT INTO `t_threads` VALUES ('893', '', '', '41', 'N4KX6LnjfxxCdrdE', '2', '2016-08-23 14:35:25', '2016-08-23 14:35:25', '884', '892', '2', 'uploads/image1471934125617.jpeg');
 INSERT INTO `t_threads` VALUES ('894', '', 'testtetst', '41', 'N4KX6LnjfxxCdrdE', '2', '2016-08-24 12:53:31', '2016-08-24 12:53:31', '0', '0', '1', null);
 INSERT INTO `t_threads` VALUES ('895', '', 'sadasdasdf', '41', 'N4KX6LnjfxxCdrdE', '2', '2016-08-24 12:54:26', '2016-08-24 12:54:26', '881', '883', '1', 'uploads/image1472014466535.jpeg');
-INSERT INTO `t_threads` VALUES ('896', '', '', '41', 'N4KX6LnjfxxCdrdE', '2', '2016-08-24 12:56:33', '2016-08-24 12:56:33', '0', '0', '1', 'uploads/image1472014593886.png');
+INSERT INTO `t_threads` VALUES ('896', '', '', '41', 'N4KX6LnjfxxCdrdE', '2', '2016-08-24 12:56:33', '2017-02-22 15:31:39', '0', '0', '1', 'uploads/image1472014593886.png');
+INSERT INTO `t_threads` VALUES ('898', '', 'ss', '48', '0d50fe789fff7485', '2', '2017-02-22 15:31:14', '2017-02-22 15:31:14', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('899', '', '', '48', '0d50fe789fff7485', '2', '2017-02-22 15:31:24', '2017-02-22 15:31:24', '0', '0', '1', 'uploads/image1487748684297.jpeg');
+INSERT INTO `t_threads` VALUES ('900', '', 'd', '48', '0d50fe789fff7485', '2', '2017-02-22 15:31:33', '2017-02-22 15:31:33', '896', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('901', '', 'jj', '48', '0d50fe789fff7485', '2', '2017-02-22 15:31:39', '2017-02-22 15:31:39', '896', '900', '1', null);
+INSERT INTO `t_threads` VALUES ('902', '', 'sss', '48', '0edcea8db0c75b8a', '2', '2017-02-22 15:34:26', '2017-02-22 15:34:26', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('903', '', 'ss', '48', 'a9c20105d8b303a0', '2', '2017-02-22 16:42:41', '2017-02-22 16:42:41', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('904', 'aa', 'aa', '48', 'a9c20105d8b303a0', '2', '2017-02-22 16:42:56', '2017-02-22 16:42:56', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('905', '', 'jojo的回复', '41', '650274d8a196e5d4', '2', '2017-03-10 14:04:58', '2017-03-10 14:04:58', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('906', '', '萨达啊', '41', '650274d8a196e5d4', '2', '2017-03-10 14:05:11', '2017-03-10 14:05:11', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('907', '', 'hello&nbsp;py', '52', '6c25e8cd0722899e', '2', '2017-03-13 14:21:01', '2017-03-13 14:21:01', '0', '0', '1', null);
+INSERT INTO `t_threads` VALUES ('908', '', 'ddd', '48', '650274d8a196e5d4', '2', '2017-03-13 16:57:10', '2017-03-13 16:57:10', '0', '0', '1', null);
 
 -- ----------------------------
 -- Table structure for t_user
@@ -209,25 +229,26 @@ DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `uid` int(16) NOT NULL AUTO_INCREMENT,
   `userName` varchar(20) DEFAULT NULL,
-  `passWord` varchar(20) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `passWord` varchar(32) DEFAULT NULL,
+  `email` varchar(64) DEFAULT NULL,
   `userStatus` tinyint(1) DEFAULT NULL,
   `cookie` char(16) DEFAULT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
 INSERT INTO `t_user` VALUES ('1', 'song', '1234', '66@qq.com', '2', 'abcdef');
-INSERT INTO `t_user` VALUES ('2', 'java', '111111', '11@qq.com', '2', 'GzBNs0FtvrWvKIae');
-INSERT INTO `t_user` VALUES ('41', 'jojo', '111111', '6019099821@qq.com', '2', 'N4KX6LnjfxxCdrdE');
+INSERT INTO `t_user` VALUES ('2', 'java', '96e79218965eb72c92a549dd5a330112', '11@qq.com', '2', 'GzBNs0FtvrWvKIae');
+INSERT INTO `t_user` VALUES ('41', 'jojo', '96e79218965eb72c92a549dd5a330112', 'noone@qq.com', '2', 'N4KX6LnjfxxCdrdE');
 INSERT INTO `t_user` VALUES ('42', 'asdsad', '111111', '11121@000sas1dasda0.com', '2', 'W8qFRBZwAfa5VN8m');
 INSERT INTO `t_user` VALUES ('43', 'kkkk', '111111', '11@020.com', '2', '9VilxOGal2U3jOAq');
-INSERT INTO `t_user` VALUES ('44', '1231231', '111111', '6019099282@qq.com', '2', '2OrTUOmcj6iPzgmK');
-INSERT INTO `t_user` VALUES ('45', 'admin', 'admin', 'admin@mantou.com', '0', 'gpxxnXIAPhc8ldXs');
+INSERT INTO `t_user` VALUES ('44', '1231231', '111111', '60133@qq.com', '2', '2OrTUOmcj6iPzgmK');
+INSERT INTO `t_user` VALUES ('45', 'admin', '96e79218965eb72c92a549dd5a330112', 'admin@mantou.com', '0', 'gpxxnXIAPhc8ldXs');
 INSERT INTO `t_user` VALUES ('46', 'test', '111111', '110@test.com', '0', 'testtesttesttest');
-INSERT INTO `t_user` VALUES ('48', 'mantou', '111111', '6019099823@qq.com', '2', 'WsPOXnqFrG5sMeX9');
+INSERT INTO `t_user` VALUES ('48', 'mantou', '', '', '2', 'abc');
 INSERT INTO `t_user` VALUES ('49', 'So黄兴', '123456', 'tmc20141@163.com', '1', 'qyjb1ciT3ITwC8fm');
-INSERT INTO `t_user` VALUES ('50', '测试1', '111111', '601909982@qq.com', '2', 'YftLq742QUdSoC0J');
+INSERT INTO `t_user` VALUES ('50', '测试1', '111111', 'lalala@qq.com', '2', 'YftLq742QUdSoC0J');
 INSERT INTO `t_user` VALUES ('51', 'So高冷', '111111', '1375832397@qq.com', '2', '8TIHCRossgyXaIDB');
+INSERT INTO `t_user` VALUES ('52', 'python', '23eeeb4347bdd26bfc6b7ee9a3b755dd', '601909982@qq.com', '2', 'kW6mZ2j8bMZMCPrV');

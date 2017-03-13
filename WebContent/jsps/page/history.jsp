@@ -49,7 +49,7 @@ body {
 
 </head>
 <body>
-	<jsp:include page="/jsps/page/navbar.jsp"></jsp:include>
+	<jsp:include page="/jsps/page/base/navbar.jsp"></jsp:include>
 	<br>
 	<br>
 	<br>
@@ -65,8 +65,8 @@ body {
 			<div class="col-md-10 column col-sm-11 ">
 				<div id="page_content">
 					<div class="container-fluid ">
-						<jsp:include page="/jsps/page/threadsList.jsp"></jsp:include>
-						<jsp:include page="/jsps/page/pagination.jsp"></jsp:include>
+						<jsp:include page="/jsps/page/threads/threadsList.jsp"></jsp:include>
+						<jsp:include page="/jsps/page/base/pagination.jsp"></jsp:include>
 					</div>
 				</div>
 

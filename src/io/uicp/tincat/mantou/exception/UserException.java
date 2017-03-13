@@ -27,6 +27,18 @@ public class UserException extends Exception{
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public void printStackTrace() {
+		// TODO Auto-generated method stub
+		super.printStackTrace();
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
 	public UserException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub

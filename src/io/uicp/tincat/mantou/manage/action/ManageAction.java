@@ -14,9 +14,11 @@ import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import io.uicp.tincat.mantou.exception.ThreadException;
 import io.uicp.tincat.mantou.manage.entity.Report;
 import io.uicp.tincat.mantou.manage.entity.ReportPage;
 import io.uicp.tincat.mantou.manage.service.ManageService;
+import io.uicp.tincat.mantou.page.entity.Page;
 import io.uicp.tincat.mantou.user.entity.User;
 
 @Controller
@@ -63,13 +65,30 @@ public class ManageAction extends ActionSupport implements ServletRequestAware {
 		if (pageCode == null) {
 			pageCode = "1";
 		}
+		
+		String url = request.getRequestURI() + "?" + request.getQueryString();
+		System.out.println(url);
+		int index = url.lastIndexOf("&pageCode=");
+		if (index != -1) {
+			url = url.substring(0, index);
+		}
 
 		ReportPage rp = new ReportPage();
 		rp.setTid(Integer.parseInt(tid));
 		rp.setPageCode(Integer.parseInt(pageCode));
+		
 
 		ReportPage currentReportPage = manageService.reports(rp);
 		session.setAttribute("currentReportPage", currentReportPage);
+		
+		Page currentPage = new Page();
+		currentPage.setUrl(url);
+		currentPage.setSubTitle("值班室");
+		currentPage.setPageCode(Integer.parseInt(pageCode));
+		currentPage.setPageSize(currentReportPage.getPageSize());
+		currentPage.setTotalRecords(currentReportPage.getTotalRecords());
+		session.setAttribute("currentPage", currentPage);
+		
 		return "reports";
 
 	}
@@ -86,12 +105,13 @@ public class ManageAction extends ActionSupport implements ServletRequestAware {
 		report.setFromUid(currentUser.getUid());
 		String reason = report.getReason().replace("\r\n", "<br/>").replace(" ", "&nbsp;");
 		report.setReason(reason);
-		if (manageService.addReport(report)) {
-			return "success";
-		} else {
+		try {
+			manageService.addReport(report);
+		} catch (ThreadException e) {
+			e.printStackTrace();
 			return "threadsnotfound";
 		}
-
+		return "success";
 	}
 
 	public String deal() {

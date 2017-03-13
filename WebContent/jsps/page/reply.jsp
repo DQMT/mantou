@@ -82,8 +82,8 @@ body{
 				<div id="page_content" >
 					<div class="container-fluid ">
 					
-					<jsp:include page="/jsps/page/replycontent.jsp"></jsp:include>
-					<jsp:include page="/jsps/page/pagination.jsp"></jsp:include>
+					<jsp:include page="/jsps/page/threads/replycontent.jsp"></jsp:include>
+					<jsp:include page="/jsps/page/base/pagination.jsp"></jsp:include>
 					</div>
 				</div>
 				

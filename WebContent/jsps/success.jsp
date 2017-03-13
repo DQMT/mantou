@@ -49,7 +49,7 @@ body {
 
 </head>
 <body>
-	<jsp:include page="/jsps/page/navbar.jsp"></jsp:include>
+	<jsp:include page="/jsps/page/base/navbar.jsp"></jsp:include>
 	<br>
 	<br>
 	<br>

@@ -14,6 +14,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import io.uicp.tincat.mantou.exception.ThreadException;
 import io.uicp.tincat.mantou.manage.dao.ReportDao;
 import io.uicp.tincat.mantou.manage.entity.Report;
 import io.uicp.tincat.mantou.manage.entity.ReportPage;
@@ -62,20 +63,16 @@ public class ManageServiceImpl implements ManageService{
 
 	@Override
 	@Transactional
-	public boolean addReport(Report report) {
-		Threads t = threadsDao.getThreadsByTid(report.getTid());
-		if(t.equals(null)){
-			return false;
-		}else{
+	public void addReport(Report report) throws ThreadException {
+		try{
+			Threads t = threadsDao.getThreadsByTid(report.getTid());
 			report.setToUid(t.getUid());
 			report.setStatus(1);
 			report.setResult("尚未处理");
 			reportDao.saveReport(report);
-			return true;
+		}catch (Exception e){
+			throw new ThreadException();
 		}
-		
-		
-		
 	}
 
 

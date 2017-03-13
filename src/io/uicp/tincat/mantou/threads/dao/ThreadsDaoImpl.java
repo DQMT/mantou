@@ -30,7 +30,7 @@ public class ThreadsDaoImpl implements ThreadsDao {
 	}
 
 	@Override
-	public Threads getThreadsByTid(Integer tid) {
+	public Threads getThreadsByTid(Integer tid){
 		return baseDao.get("from Threads where tid=?", new Object[] { tid });
 	}
 
