@@ -72,7 +72,9 @@ body {
 
 			</div>
 			<div class="col-md-1 column col-sm-0 ">
-				<div id="page_tool">something good </div>
+				<div id="page_tool">
+					<jsp:include page="/jsps/right.jsp"></jsp:include>
+				</div>
 			</div>
 
 		</div>
