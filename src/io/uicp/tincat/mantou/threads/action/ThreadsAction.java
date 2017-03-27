@@ -130,9 +130,7 @@ public class ThreadsAction extends ActionSupport implements ServletRequestAware 
 		threads.setUid(currentUser.getUid());
 		threads.setuCookie(StringUtil.getMD5(currentUser.getCookie()).substring(16));
 		threads.setThreadStatus(new Integer(2));
-		Date date = new Date();
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String now = format.format(date);
+		String now = StringUtil.getTimeString();
 		threads.setCreateTime(now);
 		threads.setUpdateTime(now);
 		threads.setSupertid(new Integer(0));
@@ -182,9 +180,7 @@ public class ThreadsAction extends ActionSupport implements ServletRequestAware 
 		threads.setUid(currentUser.getUid());
 		threads.setuCookie(StringUtil.getMD5(currentUser.getCookie()).substring(16));
 		threads.setThreadStatus(new Integer(2));
-		Date date = new Date();
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String now = format.format(date);
+		String now = StringUtil.getTimeString();
 		threads.setCreateTime(now);
 		threads.setUpdateTime(now);
 		int tid = Integer.parseInt(request.getParameter("tid"));

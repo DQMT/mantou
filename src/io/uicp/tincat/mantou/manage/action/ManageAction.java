@@ -20,6 +20,7 @@ import io.uicp.tincat.mantou.manage.entity.ReportPage;
 import io.uicp.tincat.mantou.manage.service.ManageService;
 import io.uicp.tincat.mantou.page.entity.Page;
 import io.uicp.tincat.mantou.user.entity.User;
+import io.uicp.tincat.mantou.util.StringUtil;
 
 @Controller
 public class ManageAction extends ActionSupport implements ServletRequestAware {
@@ -97,9 +98,7 @@ public class ManageAction extends ActionSupport implements ServletRequestAware {
 		HttpSession session = request.getSession();
 		System.out.println("进入addReport.ManageAction");
 		User currentUser = (User) session.getAttribute("currentUser");
-		Date date = new Date();
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String now = format.format(date);
+		String now = StringUtil.getTimeString();
 		report.setCreateTime(now);
 		report.setUpdateTime(now);
 		report.setFromUid(currentUser.getUid());

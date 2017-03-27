@@ -6,7 +6,7 @@
 
 <div>
 	<ul>
-		<li><a href="/mantou/jsps/blog/blog.jsp">新建博客</a></li>
+		<li><a href="/mantou/jsps/blog/createblog.jsp">新建博客</a></li>
 		<li>something</li>
 	</ul>
 </div>

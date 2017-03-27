@@ -80,5 +80,12 @@
 			<result name="input" type="redirect"> page_visit.action?subm=${subm}
 			</result>
 		</action>
+		<action name="blog_*" method="{1}"
+			class="io.uicp.tincat.mantou.blog.action.BlogAction">
+			<result name="success">/jsps/page/main.jsp</result>
+			<!-- <result name="reply">/jsps/page/main.jsp?reply=1</result> -->
+			<result name="history">/jsps/page/history.jsp</result>
+			<interceptor-ref name="loginStack" />
+		</action>
 	</package>
 </struts>

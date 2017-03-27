@@ -22,6 +22,7 @@ import io.uicp.tincat.mantou.threads.dao.ThreadsDao;
 import io.uicp.tincat.mantou.threads.entity.Threads;
 import io.uicp.tincat.mantou.user.dao.UserDao;
 import io.uicp.tincat.mantou.user.entity.User;
+import io.uicp.tincat.mantou.util.StringUtil;
 
 @Service("manageService")
 public class ManageServiceImpl implements ManageService{
@@ -81,9 +82,7 @@ public class ManageServiceImpl implements ManageService{
 	public boolean deal(int rid, int action) {
 		Report report = reportDao.getReportByRid(rid);
 		report.setStatus(action);
-		Date date = new Date();
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String now = format.format(date);
+		String now = StringUtil.getTimeString();
 		report.setUpdateTime(now);
 		report.updateResult();
 		reportDao.updateReport(report);
