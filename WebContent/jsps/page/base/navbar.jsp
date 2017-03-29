@@ -50,7 +50,7 @@
 						关于 <b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#">版本号：v2.0.4</a></li>
+						<li><a href="#">版本号：v2.0.5</a></li>
 						<li class="divider"></li>
 						<li><a href="https://github.com/DQMT/mantou" target="_blank">
 								<img alt="(´・ω・`)图片加载失败了" height="26px" width="36px" src="/mantou/images/github.jpg">&nbsp; &nbsp;源代码
