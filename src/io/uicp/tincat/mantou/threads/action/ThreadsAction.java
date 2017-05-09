@@ -2,14 +2,10 @@ package io.uicp.tincat.mantou.threads.action;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -19,11 +15,10 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.sun.jmx.snmp.Timestamp;
+
 import io.uicp.tincat.mantou.threads.entity.Threads;
 import io.uicp.tincat.mantou.threads.service.ThreadsService;
 import io.uicp.tincat.mantou.user.entity.User;
-import io.uicp.tincat.mantou.util.CookieUtil;
 import io.uicp.tincat.mantou.util.StringUtil;
 
 @Controller
@@ -111,7 +106,7 @@ public class ThreadsAction extends ActionSupport implements ServletRequestAware 
 		System.out.println("realpath: " + realpath);
 		if (image != null) {
 			imageContentType = imageContentType.replace("image/", ".");
-			String filename = "image" + new Timestamp().getDateTime() + imageContentType;
+			String filename = "image" + System.currentTimeMillis() + imageContentType;
 			try {
 				FileUtils.copyFile(image, new File(dir, filename));
 			} catch (IOException e) {
@@ -162,7 +157,7 @@ public class ThreadsAction extends ActionSupport implements ServletRequestAware 
 		System.out.println("realpath: " + realpath);
 		if (image != null) {
 			imageContentType = imageContentType.replace("image/", ".");
-			String filename = "image" + new Timestamp().getDateTime() + imageContentType;
+			String filename = "image" + System.currentTimeMillis() + imageContentType;
 			try {
 				FileUtils.copyFile(image, new File(dir, filename));
 			} catch (IOException e) {
