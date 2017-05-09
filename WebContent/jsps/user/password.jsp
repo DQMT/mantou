@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
-
+<link rel="shortcut icon" href="/mantou/images/favicon.ico"/>
+<link rel="bookmark" href="/mantou/images/favicon.ico"/>
 <title>馒头！</title>
 <!-- <link href="jsps/css/main.css" type="text/css" rel="stylesheet" /> -->
 <link href="/mantou/jsps/css/style.css" type="text/css" rel="stylesheet" />

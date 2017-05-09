@@ -7,7 +7,8 @@
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
-
+<link rel="shortcut icon" href="/mantou/images/favicon.ico"/>
+<link rel="bookmark" href="/mantou/images/favicon.ico"/>
 
 
 <title>注册</title>

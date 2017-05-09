@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="/mantou/images/favicon.ico"/>
+<link rel="bookmark" href="/mantou/images/favicon.ico"/>
 <title>馒头！</title>
 <meta http-equiv="refresh" content ="5;url=/mantou/index.jsp">
 <script type="text/javascript">

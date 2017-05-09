@@ -9,7 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
-
+<link rel="shortcut icon" href="/mantou/images/favicon.ico"/>
+<link rel="bookmark" href="/mantou/images/favicon.ico"/>
 <title>mantou</title>
 
 <link href="/mantou/bootstrap-3.3.7-dist/css/bootstrap.min.css"

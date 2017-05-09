@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>馒头！</title>
 <meta http-equiv="refresh" content ="5;url=/mantou/jsps/success.jsp">
+<link rel="shortcut icon" href="/mantou/images/favicon.ico"/>
+<link rel="bookmark" href="/mantou/images/favicon.ico"/>
 <script type="text/javascript">
 	var i = 6;
 	function shownum() {
