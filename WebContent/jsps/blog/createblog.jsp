@@ -17,7 +17,7 @@
 	<br>
 	<br>
 	<br>
-
+	
 
 
 	<div class="container-fluid">
@@ -31,7 +31,7 @@
 			<div class="col-md-4 col-lg-4 column">
 				<form action="/mantou/blog_saveBlog.action" method="post">
 					<div class="input-group">
-						<span class="input-group-addon">标题</span> <input type="text"
+						<span class="input-group-addon">标题</span> <input type="text" id="title"
 							name="blog.title" class="form-control" placeholder="title">
 					</div>
 					<div class="input-group">
@@ -41,7 +41,7 @@
 						</div>
 					</div>
 						<input type="hidden" name="blog.uid" value="${currentUser.uid}">
-						<button type="submit" class="btn btn-warning ">清空</button>
+						<button type="button" id="clear" onclick="clearText();" class="btn btn-warning ">清空</button>
 						<button type="submit" class="btn btn-primary pull-right">提交</button>
 				</form>
 			</div>
@@ -69,6 +69,15 @@
 			return document.getElementById(id);
 		};
 		new Editor($("text-input"), $("preview"));
+		
+		
+	</script>
+	<script type="text/javascript">
+		function clearText(){
+			
+			document.getElementById("text-input").value = "";
+			
+		}
 	</script>
 
 </body>

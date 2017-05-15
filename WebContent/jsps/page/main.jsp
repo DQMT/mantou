@@ -56,14 +56,14 @@ body {
 	<br>
 	<div class="container-fluid ">
 		<div class="row ">
-			<div class="col-md-1 column col-sm-1">
+			<div class="col-md-1 column col-sm-2">
 				<div id="page_menu">
 					<jsp:include page="/jsps/left.jsp"></jsp:include>
 				</div>
 			</div>
 
 
-			<div class="col-md-10 column col-sm-11 ">
+			<div class="col-md-10 column col-sm-8 ">
 				<div id="page_content">
 					<div class="container-fluid ">
 						<jsp:include page="/jsps/page/threads/content.jsp"></jsp:include>
@@ -72,8 +72,8 @@ body {
 				</div>
 
 			</div>
-			<div class="col-md-1 column col-sm-0 ">
-				<div id="page_tool">
+			<div class="col-md-1 column col-sm-2 " >
+				<div class="container-fluid ">
 					<jsp:include page="/jsps/right.jsp"></jsp:include>
 				</div>
 			</div>
