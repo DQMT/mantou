@@ -31,7 +31,7 @@
 	border-left-width: 10px;
 	border-color: #FBFBFF;
 	height: 92%;
-	width: 80%;
+	width: 91%;
 	overflow-y: scroll;
 }
 
@@ -63,7 +63,7 @@ body {
 			</div>
 
 
-			<div class="col-md-10 column col-sm-8 ">
+			<div class="col-md-10 column col-sm-10 ">
 				<div id="page_content">
 					<div class="container-fluid ">
 						<jsp:include page="/jsps/page/threads/content.jsp"></jsp:include>
@@ -72,11 +72,11 @@ body {
 				</div>
 
 			</div>
-			<div class="col-md-1 column col-sm-2 " >
+			<%-- <div class="col-md-1 column col-sm-2 " >
 				<div class="container-fluid ">
 					<jsp:include page="/jsps/right.jsp"></jsp:include>
 				</div>
-			</div>
+			</div> --%>
 
 		</div>
 	</div>

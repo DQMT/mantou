@@ -4,7 +4,8 @@
 <%@ page language="java" import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-	<ul class="list-group">
+	<!-- <ul class="list-group">
 		<li class="list-group-item"><a href="/mantou/jsps/blog/createblog.jsp">新建博客</a></li>
 		<li class="list-group-item">something</li>
 	</ul>
+ -->

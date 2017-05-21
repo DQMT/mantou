@@ -14,28 +14,28 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">    
   
     <!-- 定义数据源 -->
-  <!--   <bean id="dataSource"
+    <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/mantou">
+			value="jdbc:mysql://localhost:3306/mantou?useUnicode=true&amp;characterEncoding=utf-8 ">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="123456"></property>
-	</bean> -->
-	  <bean id="dataSource"
+	</bean>
+	  <!-- <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver">
 		</property>
-		<!-- <property name="url" value="jdbc:mysql://45.78.35.107:3306/mantou"> -->
+		<property name="url" value="jdbc:mysql://45.78.35.107:3306/mantou">
 		<property name="url" value="jdbc:mysql://127.0.0.1:3306/mantou?useUnicode=true&amp;characterEncoding=utf-8 ">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="Dtl3mT1QuJSCe9Ay"></property>
-	</bean>
+	</bean> -->
 	
       
     <!-- session工厂 -->  
